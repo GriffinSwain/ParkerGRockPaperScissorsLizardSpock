@@ -33,6 +33,16 @@
    
 }
 
+.pageWaiting{
+   z-index: -1;
+   margin-top: -2000px;
+}
+
+.pageDisplay{
+   margin-top: 1400px;
+   position: absolute;
+}
+
 .imageFlip{
    transform: scaleX(-1)
 }
@@ -98,8 +108,9 @@ height: 100vh;
 .gameButton{
    position:absolute;
    z-index:999;
-   margin-left: -5vw;
-   margin-top: 41vh;
+   margin-top: 325px;
+   margin-left: 700px;
+   position: absolute;
    height: 100px;
    width: 150px;
    background-color: rgb(95,197,186);
@@ -120,7 +131,16 @@ height: 100vh;
    color: white;
    font-family: Audiowide;
    position: absolute;
-   margin-left: 170px;
+   margin-left: 200px;
+   margin-right: -570px;
+   margin-top: 50px;
+}
+
+.gameHeader2{
+   color: white;
+   font-family: Audiowide;
+   position: absolute;
+   margin-right: -1340px;
    margin-top: 25px;
 }
 
@@ -129,15 +149,55 @@ height: 100vh;
    height: 75px;
 }
 
+.gameScore{
+   color: white;
+   position: absolute;
+   margin-left: 80px;
+   margin-top: 380px;
+   font-family: Unlock;
+   font-size: 100px;
+}
+
+.gameScore2{
+   color: white;
+   position: absolute;
+   margin-right: 80px;
+   margin-top: 380px;
+   font-family: Unlock;
+   font-size: 100px;
+}
+
 .gameHero{
-   width: 50vw;
-   height: 100vh;
+   width: 650px;
+   height: 720px;
    object-fit:cover;
-   margin-right: 5vw;
-   justify-content: center;
-   margin-top: -4vh;
+   margin-left: 450px;
+   /* margin-top: 405px; */
    position: absolute;
    z-index: -1;
+}
+
+.gameCharacterImg{
+   width: 200px;
+   height: 200px;
+   margin-top: 170px;
+   margin-left: 5px;
+   object-fit: contain;
+   position: absolute;
+   z-index: 1;
+   pointer-events: none;
+}
+
+.gameCharacterImg2{
+   width: 200px;
+   height: 200px;
+   margin-top: 170px;
+   margin-right: 5px;
+   margin-left: 500px;
+   object-fit: contain;
+   position: absolute;
+   z-index: 1;
+   pointer-events: none;
 }
 
 .playerTwo{
@@ -227,8 +287,8 @@ height: 100vh;
 }
 
 .gameShift{
-   margin-top: 725px;
-   margin-left: 210px;
+   margin-top: 750px;
+   margin-left: 240px;
    position: absolute;
 }
 .gameShift2{
@@ -237,7 +297,7 @@ height: 100vh;
 
 .gameShift3{
    margin-top: 725px;
-   margin-left: -440px;
+   margin-left: 1150px;
    position: absolute;
 }
 

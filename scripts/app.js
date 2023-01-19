@@ -3,9 +3,10 @@
 //Make little animation of the hand sign emojis attacking each other to display who won or lost; maybe call a random photo API as battlefield
 //Make the emojis have a white skin color, except for Raj who has a brown skin tone and cpu yung sheldon who is yellow
 
+// import { MoveChoice, SelectWinner, KeepScore } from "./game.js";
 
 //Select Screen Variables
-
+//Character Selector
 let one1 = document.getElementById("btnradio1");
 let one2 = document.getElementById("btnradio2");
 let one3 = document.getElementById("btnradio3");
@@ -24,18 +25,28 @@ let two6= document.getElementById("btnradio26");
 let two7 = document.getElementById("btnradio27");
 let two8 = document.getElementById("btnradio28");
 
+//Best Of x selector
 let bestOf1 = document.getElementById("btnradio31");
 let bestOf5 = document.getElementById("btnradio32");
 let bestOf7 = document.getElementById("btnradio33");
 
+//2nd Player Selector
 let cpu = document.getElementById("btnradio41");
 let human = document.getElementById("btnradio42");
+
+let gameContainer = document.getElementById("gameContainer");
+let selectionContainer = document.getElementById("selectionContainer")
 
 let injectHere = document.getElementById("injectHere");
 let beginButton = document.getElementById("beginButton");
 
 // Main Game Variables
 
+//Player Character Images
+let firstPlayerImg = document.getElementById("firstPlayerImg");
+let secondPlayerImg = document.getElementById("secondPlayerImg");
+
+// Getting player game selection
 let Rock1 = document.getElementById("vbtn-radio1");
 let Paper1 = document.getElementById("vbtn-radio2");
 let Scissors1 = document.getElementById("vbtn-radio3");
@@ -48,7 +59,10 @@ let Lizard2 = document.getElementById("vbtn-radio24");
 let Spock2 = document.getElementById("vbtn-radio25");
 
 let submitButton = document.getElementById("submitButton")
+let gameBackground = document.getElementById("gameBackground");
+let playerTwoContainer = document.getElementById("playerTwoContainer");
 
+//
 let character1 = "";
 let character2 = "";
 let choice1 = "";
@@ -59,9 +73,40 @@ let score2 = 0;
 let secondPlayer = "CPU";
 let bestOf = 5;
 
-// beginButton.addEventListener("click", function(){
-//     selectPage()
-// })
+
+beginButton.addEventListener("click", function(){
+    
+    selectionContainer.className = "pageWaiting";
+    gameContainer.className = "pageDisplay";
+    submitButton.className = "btn btn-primary gameButton";
+    gameBackground.className = "gameHero";
+    playerTwoContainer.className = "container-fluid d-flex playerTwo";
+    // getHtml()
+    // let Rock1 = document.getElementById("vbtn-radio1");
+    // let Paper1 = document.getElementById("vbtn-radio2");
+    // let Scissors1 = document.getElementById("vbtn-radio3");
+    // let Lizard1 = document.getElementById("vbtn-radio4");
+    // let Spock1 = document.getElementById("vbtn-radio5");
+    // let Rock2 = document.getElementById("vbtn-radio21");
+    // let Paper2 = document.getElementById("vbtn-radio22");
+    // let Scissors2 = document.getElementById("vbtn-radio23");
+    // let Lizard2 = document.getElementById("vbtn-radio24");
+    // let Spock2 = document.getElementById("vbtn-radio25");
+})
+
+
+function getHtml(){
+    fetch("./data.html").then(
+        response => response.text()
+    ).then(
+        data => injectHere.innerHTML = data
+        //This will keep creating new cards with one click
+        //data => injectHere.innerHTML += data
+    )
+}
+
+
+
 
 //Select Screen Buttons
 
@@ -150,9 +195,11 @@ two8.addEventListener("click", function(){
 
 Rock1.addEventListener("click", function(){
     choice1 = "Rock";
+    console.log("Free at last");
 })
 Paper1.addEventListener("click", function(){
     choice1 = "Paper";
+    console.log("Paper at last");
 })
 Scissors1.addEventListener("click", function(){
     choice1 = "Scissors";
@@ -179,14 +226,14 @@ Spock2.addEventListener("click", function(){
     choice2 = "Spock";
 })
 
-submitButton.addEventListener("click", function(){
-    SelectWinner()
-    KeepScore()
-    console.log(score1);
-    console.log(score2);
-    console.log(winner);
+// submitButton.addEventListener("click", function(){
+//     SelectWinner()
+//     KeepScore()
+//     console.log(score1);
+//     console.log(score2);
+//     console.log(winner);
     
-})
+// })
 
 function KeepScore(){
     switch (winner){
