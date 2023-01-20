@@ -90,16 +90,10 @@ let textScore2 = "";
 let secondPlayer = "CPU";
 let cpuAPIUrl = "";
 
-var audio = new Audio('Assets/BigBangThemeSong.mp3');
-
+var audio = new Audio('Assets/BigBangThemeSong.mp3'); 
 
 // Temporary code to allow me to work on the second page without it going back to the first page constantly
 
-body.onload = music();
-
-function music(){
-        audio.play(); 
-}
 
 // body.onload = SecondPage();
 
@@ -121,6 +115,7 @@ beginButton.addEventListener("click", function(){
     gameContainer.className = "pageDisplay";
     submitButton.className = "btn btn-dark gameButton";
     gameBackground.className = "gameHero";
+    audio.play();
     
     if (secondPlayer == "Human"){
         playerTwoContainer.className = "container-fluid d-flex playerTwo";
@@ -585,6 +580,7 @@ function KeepScore(){
         break;
 
         case "Tie":
+            submitButtonText.textContent = "Tie"
         break;
     }
 }
