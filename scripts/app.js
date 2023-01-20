@@ -3,8 +3,6 @@
 //Make little animation of the hand sign emojis attacking each other to display who won or lost; maybe call a random photo API as battlefield
 //Make the emojis have a white skin color, except for Raj who has a brown skin tone and cpu yung sheldon who is yellow
 
-// import { MoveChoice, SelectWinner, KeepScore } from "./game.js";
-
 let body = document.getElementById("body");
 
 //Select Screen Variables
@@ -39,6 +37,7 @@ let human = document.getElementById("btnradio42");
 let gameContainer = document.getElementById("gameContainer");
 let selectionContainer = document.getElementById("selectionContainer");
 let championChoice = document.getElementById("championChoice");
+let cpuGame = document.getElementById("cpuGame");
 
 let injectHere = document.getElementById("injectHere");
 let beginButton = document.getElementById("beginButton");
@@ -91,15 +90,15 @@ let cpuAPIUrl = "";
 
 
 // Temporary code to allow me to work on the second page without it going back to the first page constantly
-body.onload = SecondPage();
+// body.onload = SecondPage();
 
-function SecondPage(){
-    selectionContainer.className = "pageWaiting";
-    gameContainer.className = "pageDisplay";
-    submitButton.className = "btn btn-primary gameButton";
-    gameBackground.className = "gameHero";
-    // playerTwoContainer.className = "container-fluid d-flex playerTwo";
-}
+// function SecondPage(){
+//     selectionContainer.className = "pageWaiting";
+//     gameContainer.className = "pageDisplay";
+//     submitButton.className = "btn btn-primary gameButton";
+//     gameBackground.className = "gameHero";
+//     playerTwoContainer.className = "container-fluid d-flex playerTwo";
+// }
 
 beginButton.addEventListener("click", function(){
     
@@ -110,6 +109,7 @@ beginButton.addEventListener("click", function(){
     
     if (secondPlayer == "Human"){
         playerTwoContainer.className = "container-fluid d-flex playerTwo";
+        cpuGame.className = "hide";
     }
     if (secondPlayer == "CPU"){
         secondPlayerImg.className = "gameCharacterImg2 imageFlip"

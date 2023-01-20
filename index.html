@@ -13,7 +13,7 @@
 
 <body class="background" id="body">
     <div class="container-fluid" id="selectionContainer">
-        <button id="beginButton" type="button" class="btn btn-primary selectButton"><h2 class="selectHeader" id="beginText">Begin</h2></h2Begin></button>
+        <button id="beginButton" type="button" class="btn btn-dark selectButton"><h2 class="selectHeader" id="beginText">Begin</h2></h2Begin></button>
         <div class="row">
             <div class="col-12 text-center mt-3">
                 <h1 class="selectHeader">Rock Paper Scissors Lizard Spock</h1>
@@ -232,20 +232,20 @@
         <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
             <div class="gameShift">
                 <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off">
-                <label class="btn btn-outline-secondary RPSLSButton" for="vbtn-radio1"><h3 class="gameButtonText">Rock</h3></label>
+                <label class="btn btn-secondary RPSLSButton" for="vbtn-radio1"><h3 class="gameButtonText">Rock</h3></label>
                 <div class="gameShift2">
                     
                     <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
-                    <label class="btn btn-outline-light RPSLSButton" for="vbtn-radio2"><h3 class="gameButtonText" style="-webkit-text-stroke: 0.75px rgb(0, 0, 0); font-size: 30px;">Paper</h3></label>
+                    <label class="btn btn-light RPSLSButton" for="vbtn-radio2"><h3 class="gameButtonText" style="-webkit-text-stroke: 0.75px rgb(0, 0, 0); font-size: 30px;">Paper</h3></label>
                     <div class="gameShift2">
                         <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
-                        <label class="btn btn-outline-danger RPSLSButton" for="vbtn-radio3"><h3 class="gameButtonText">Scissors</h3></label>
+                        <label class="btn btn-danger RPSLSButton" for="vbtn-radio3"><h3 class="gameButtonText">Scissors</h3></label>
                         <div class="gameShift2">
                             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio4" autocomplete="off">
-                            <label class="btn btn-outline-success RPSLSButton" for="vbtn-radio4"><h3 class="gameButtonText">Lizard</h3></label>
+                            <label class="btn btn-success RPSLSButton" for="vbtn-radio4"><h3 class="gameButtonText">Lizard</h3></label>
                             <div class="gameShift2">
                     <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio5" autocomplete="off">
-                    <label class="btn btn-outline-primary RPSLSButton" for="vbtn-radio5"><h3 class="gameButtonText">Spock</h3></label>
+                    <label class="btn btn-primary RPSLSButton" for="vbtn-radio5"><h3 class="gameButtonText">Spock</h3></label>
                     </div>
                 </div>
             </div>
@@ -253,7 +253,7 @@
         </div>
         </div>
 
-        <div class="container-fluid">
+        <div class="container-fluid" id="cpuGame">
 
           <img src="./Assets/Sheldor.png" id="cpuPlayerImg" class="cpuCharacterImg" alt="">
           <h1 class="cpuScore" id="gameScore2">0</h1>
@@ -261,7 +261,7 @@
         </div>
 
         <div class="container-fluid">
-          <button id="submitButton" type="button" class="btn btn-primary pageWaiting"><h3 class="centerGameButtonText">Submit</h3></button>
+          <button id="submitButton" type="button" class="btn btn-dark pageWaiting"><h3 class="centerGameButtonText">Submit</h3></button>
           <img src="./Assets/TheRules.png" class="pageWaiting" id="gameBackground" alt="">
         </div>
         <div class="container-fluid d-flex playerTwo pageWaiting" id="playerTwoContainer">

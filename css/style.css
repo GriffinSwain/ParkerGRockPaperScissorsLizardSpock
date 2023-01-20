@@ -24,11 +24,11 @@
    display: none;
 }
 
-.btn-primary, .btn-primary:active, .btn-primary:visited .btn-outline-primary {
+.btn-dark, .btn-dark:active, .btn-dark:visited {
    background-color: rgb(95,197,186) !important;
 }
 
-.btn-primary:hover {
+.btn-dark:hover {
    background-color: rgb(69, 156, 148) !important;
 }
 
