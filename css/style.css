@@ -20,6 +20,10 @@
    src: url(../Assets/Fonts/JacquesFrancoisShadow-Regular.ttf);
 }
 
+.hide{
+   display: none;
+}
+
 .btn-primary, .btn-primary:active, .btn-primary:visited .btn-outline-primary {
    background-color: rgb(95,197,186) !important;
 }
@@ -44,7 +48,7 @@
 }
 
 .imageFlip{
-   transform: scaleX(-1)
+   transform: scaleX(-1);
 }
 
 .buttonText{
@@ -163,9 +167,59 @@ height: 100vh;
    color: white;
    position: absolute;
    margin-right: -1425px;
-   margin-top: 380px;
+   margin-top: 345px;
    font-family: Unlock;
    font-size: 100px;
+}
+
+.gameChoice{
+   color: white;
+   position: absolute;
+   margin-left: 60px;
+   margin-right: -20px;
+   margin-top: 510px;
+   font-family: Unlock;
+   font-size: 150px;
+   transform: scaleX(-1)
+}
+
+.gameChoice2{
+   color: white;
+   position: absolute;
+   margin-right: -1485px;
+   margin-top: 480px;
+   font-family: Unlock;
+   font-size: 150px;
+}
+
+.gameBlocker{
+   width: 195px;
+   height: 500px;
+   background-color: rgb(95,197,186);
+   margin-top: 140px;
+   margin-left: 255px;
+   position: absolute;
+   z-index: 1;
+   text-align: center;
+}
+
+.gameBlocker2{
+   width: 195px;
+   height: 500px;
+   background-color: rgb(95,197,186);
+   margin-top: 110px;
+   margin-right: -1295px;
+   position: absolute;
+   z-index: 1;
+   text-align: center;
+}
+
+.blockerText{
+   margin-top: 180px;
+   color: white;
+   font-family: Audiowide;
+   -webkit-text-stroke: 0.75px rgb(0, 0, 0);
+   font-size: 35px;
 }
 
 .gameHero{
@@ -192,7 +246,7 @@ height: 100vh;
 .gameCharacterImg2{
    width: 200px;
    height: 200px;
-   margin-top: 170px;
+   margin-top: 140px;
    margin-right: -1500px;
    margin-left: 500px;
    object-fit: contain;
@@ -205,6 +259,37 @@ height: 100vh;
    justify-content: end;
    margin-left: 200px;
    position: absolute;
+}
+
+.cpuCharacterImg{
+   width: 300px;
+   height: 300px;
+   margin-top: 50px;
+   /* margin-right: -1050px; */
+   margin-left: 1150px;
+   object-fit: contain;
+   position: absolute;
+   z-index: 1;
+   pointer-events: none;
+}
+
+.cpuScore{
+   color: white;
+   position: absolute;
+   margin-left: 1280px;
+   margin-top: 350px;
+   font-family: Unlock;
+   font-size: 100px;
+}
+
+.cpuChoice{
+   color: white;
+   position: absolute;
+   margin-left: 1175px;
+   /* margin-right: -1185px; */
+   margin-top: 450px;
+   font-family: Unlock;
+   font-size: 200px;
 }
 
 .justifyCenter{
@@ -348,6 +433,7 @@ height: 100vh;
    width: 120px;
    height: 120px;
    object-fit: contain;
+   border-radius: 5px;
    z-index: 1;
    pointer-events: none;
 }

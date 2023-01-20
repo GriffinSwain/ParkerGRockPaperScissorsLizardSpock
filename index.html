@@ -11,9 +11,9 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
-<body class="background">
+<body class="background" id="body">
     <div class="container-fluid" id="selectionContainer">
-        <button id="beginButton" type="button" class="btn btn-primary selectButton"><h2 class="selectHeader">Begin</h2></h2Begin></button>
+        <button id="beginButton" type="button" class="btn btn-primary selectButton"><h2 class="selectHeader" id="beginText">Begin</h2></h2Begin></button>
         <div class="row">
             <div class="col-12 text-center mt-3">
                 <h1 class="selectHeader">Rock Paper Scissors Lizard Spock</h1>
@@ -92,7 +92,7 @@
                 <img src="./Assets/YUNGSHELDON.png" class="selectCharacterImg" alt="">
             </div>
         </div>
-        <h3 class="selectChampion mt-2 pulse">Choose Your Champion</h3>
+        <h3 class="selectChampion mt-2 pulse" id="championChoice">Choose Your Champion</h3>
         <div class="col-3 text-center mt-1">
             <h1 class="selectHeader">Player Two</h1>
         </div>
@@ -223,10 +223,12 @@
                     <div class="delet" id="vbtn-radio25"></button> -->
                       <div class="container-fluid pageWaiting" id="gameContainer">
 
-                        <h1 class="gameHeader">Player One</h1>
+                        <h1 class="gameHeader" id="playerOne">Player One</h1>
         <img src="./Assets/Sheldor.png" id="firstPlayerImg" class="gameCharacterImg imageFlip" alt="">
-        <h1 class="gameScore">0</h1>
+        <h1 class="gameScore" id="gameScore1">0</h1>
+        <h1 class="gameChoice" id="gameChoice"></h1>
         
+        <div class="hide" id="gameBlocker"> <h2 class="blockerText">Selection Made</h2></div>
         <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
             <div class="gameShift">
                 <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off">
@@ -250,14 +252,24 @@
             </div>
         </div>
         </div>
+
+        <div class="container-fluid">
+
+          <img src="./Assets/Sheldor.png" id="cpuPlayerImg" class="cpuCharacterImg" alt="">
+          <h1 class="cpuScore" id="gameScore2">0</h1>
+          <h1 class="cpuChoice" id="gameChoice2"></h1>
+        </div>
+
         <div class="container-fluid">
           <button id="submitButton" type="button" class="btn btn-primary pageWaiting"><h3 class="centerGameButtonText">Submit</h3></button>
           <img src="./Assets/TheRules.png" class="pageWaiting" id="gameBackground" alt="">
         </div>
         <div class="container-fluid d-flex playerTwo pageWaiting" id="playerTwoContainer">
-          <h1 class="gameHeader2">Player Two</h1>
+          <h1 class="gameHeader2" id="playerTwo">Player Two</h1>
           <img src="./Assets/Sheldor.png" id="secondPlayerImg" class="gameCharacterImg2 imageFlip" alt="">
-          <h1 class="gameScore2">0</h1>
+          <h1 class="gameScore2" id="gameScore2">0</h1>
+          <h1 class="gameChoice2" id="gameChoice2"></h1>
+          <div class="hide" id="gameBlocker2"> <h2 class="blockerText">Selection Made</h2></div>
           <div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
             <div class="gameShift3">
               <input type="radio" class="btn-check" name="vbtn-radio2" id="vbtn-radio21" autocomplete="off">
