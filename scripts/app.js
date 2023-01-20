@@ -1,7 +1,6 @@
 // alert("BAZINGA");
 // In PVP make timer that counts down from 5, automatically submitting when it gets to zero
 //Make little animation of the hand sign emojis attacking each other to display who won or lost; maybe call a random photo API as battlefield
-//Make the emojis have a white skin color, except for Raj who has a brown skin tone and cpu yung sheldon who is yellow
 
 let body = document.getElementById("body");
 
@@ -91,9 +90,16 @@ let textScore2 = "";
 let secondPlayer = "CPU";
 let cpuAPIUrl = "";
 
+var audio = new Audio('Assets/BigBangThemeSong.mp3');
 
 
 // Temporary code to allow me to work on the second page without it going back to the first page constantly
+
+body.onload = music();
+
+function music(){
+        audio.play(); 
+}
 
 // body.onload = SecondPage();
 
