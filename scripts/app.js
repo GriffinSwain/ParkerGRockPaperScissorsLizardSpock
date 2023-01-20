@@ -48,6 +48,7 @@ let beginText = document.getElementById("beginText");
 //Player Character Images
 let firstPlayerImg = document.getElementById("firstPlayerImg");
 let secondPlayerImg = document.getElementById("secondPlayerImg");
+let cpuPlayerImg = document.getElementById("cpuPlayerImg");
 
 // Getting player game selection
 let Rock1 = document.getElementById("vbtn-radio1");
@@ -62,12 +63,15 @@ let Lizard2 = document.getElementById("vbtn-radio24");
 let Spock2 = document.getElementById("vbtn-radio25");
 
 let submitButton = document.getElementById("submitButton")
+let submitButtonText = document.getElementById("submitButtonText");
 let gameBackground = document.getElementById("gameBackground");
 let playerTwoContainer = document.getElementById("playerTwoContainer");
 let gameScore1 = document.getElementById("gameScore1");
 let gameScore2 = document.getElementById("gameScore2");
+let cpuScore = document.getElementById("cpuScore");
 let gameChoice = document.getElementById("gameChoice");
 let gameChoice2 = document.getElementById("gameChoice2");
+let cpuChoice = document.getElementById("cpuChoice");
 let playerOne = document.getElementById("playerOne");
 let playerTwo = document.getElementById("playerTwo");
 let gameBlocker = document.getElementById("gameBlocker");
@@ -90,6 +94,7 @@ let cpuAPIUrl = "";
 
 
 // Temporary code to allow me to work on the second page without it going back to the first page constantly
+
 // body.onload = SecondPage();
 
 // function SecondPage(){
@@ -97,22 +102,27 @@ let cpuAPIUrl = "";
 //     gameContainer.className = "pageDisplay";
 //     submitButton.className = "btn btn-primary gameButton";
 //     gameBackground.className = "gameHero";
-//     playerTwoContainer.className = "container-fluid d-flex playerTwo";
+//     secondPlayerImg.className = "gameCharacterImg2";
 // }
+
+if (winner == ""){
+    cpuAPI();
+}
 
 beginButton.addEventListener("click", function(){
     
     selectionContainer.className = "pageWaiting";
     gameContainer.className = "pageDisplay";
-    submitButton.className = "btn btn-primary gameButton";
+    submitButton.className = "btn btn-dark gameButton";
     gameBackground.className = "gameHero";
     
     if (secondPlayer == "Human"){
         playerTwoContainer.className = "container-fluid d-flex playerTwo";
+
         cpuGame.className = "hide";
     }
     if (secondPlayer == "CPU"){
-        secondPlayerImg.className = "gameCharacterImg2 imageFlip"
+        secondPlayerImg.className = "gameCharacterImg2";
     }
 
 
@@ -153,52 +163,54 @@ beginButton.addEventListener("click", function(){
     switch(character2){
         case "Sheldon":
         secondPlayerImg.src = "./Assets/Sheldor.png";
+        cpuPlayerImg.src = "./Assets/Sheldor.png";
         secondPlayerImg.className = 'gameCharacterImg2';
+        cpuPlayerImg.className = 'cpuCharacterImg';
         break;
         case "Leonard":
         secondPlayerImg.src = "./Assets/Leonurd.png";
+        cpuPlayerImg.src = "./Assets/Leonurd.png";
         secondPlayerImg.className = 'gameCharacterImg2 imageFlip';
+        cpuPlayerImg.className = 'cpuCharacterImg imageFlip';
         break;
         case "Penny":
         secondPlayerImg.src = "./Assets/Peni.png";
+        cpuPlayerImg.src = "./Assets/Peni.png";
         secondPlayerImg.className = 'gameCharacterImg2 imageFlip';
+        cpuPlayerImg.className = 'cpuCharacterImg imageFlip';
         break;
         case "Raj":
         secondPlayerImg.src = "./Assets/Raj.png";
+        cpuPlayerImg.src = "./Assets/Raj.png";
         secondPlayerImg.className = 'gameCharacterImg2';
+        cpuPlayerImg.className = 'cpuCharacterImg';
         break;
         case "Howard":
         secondPlayerImg.src = "./Assets/Howerd.png";
+        cpuPlayerImg.src = "./Assets/Howerd.png";
         secondPlayerImg.className = 'gameCharacterImg2';
+        cpuPlayerImg.className = 'cpuCharacterImg';
         break;
         case "Bernadette":
         secondPlayerImg.src = "./Assets/Burnadebt.png";
+        cpuPlayerImg.src = "./Assets/Burnadebt.png";
         secondPlayerImg.className = 'gameCharacterImg2';
+        cpuPlayerImg.className = 'cpuCharacterImg';
         break;
         case "Amy":
         secondPlayerImg.src = "./Assets/Amee.png";
+        cpuPlayerImg.src = "./Assets/Amee.png";
         secondPlayerImg.className = 'gameCharacterImg2 imageFlip';
+        cpuPlayerImg.className = 'cpuCharacterImg imageFlip';
         break;
         case "YoungSheldon":
         secondPlayerImg.src = "./Assets/YUNGSHELDON.png";
+        cpuPlayerImg.src = "./Assets/YUNGSHELDON.png";
         secondPlayerImg.className = 'gameCharacterImg2 imageFlip';
+        cpuPlayerImg.className = 'cpuCharacterImg imageFlip';
         break;
     }
 })
-
-
-// function getHtml(){
-//     fetch("./data.html").then(
-//         response => response.text()
-//     ).then(
-//         data => injectHere.innerHTML = data
-//         //This will keep creating new cards with one click
-//         //data => injectHere.innerHTML += data
-//     )
-// }
-
-
-
 
 //Select Screen Buttons
 
@@ -415,7 +427,7 @@ Spock2.addEventListener("click", function(){
 })
 
 submitButton.addEventListener("click", function(){
-    
+
     if (secondPlayer == "CPU"){
         cpuAPI();
     }
@@ -424,16 +436,36 @@ submitButton.addEventListener("click", function(){
     KeepScore()
     gameBlocker.className = "hide";
     gameBlocker2.className = "hide";
+
+    if (score1 == winScore){
+        winner = "Player 1";
+        alert(winner + " has won the game! Refresh the page to play again!");
+        submitButtonText.textContent = "Player 1 Wins!"
+    }
+    if (score2 == winScore){
+        if (secondPlayer == "Human"){
+            winner = "Player 2";
+            submitButtonText.textContent = "Player 2 Wins!"
+            alert(winner + " has won the game! Refresh the page to play again!");
+        }else{ 
+            winner = "The Computer"
+            alert(winner + " has won the game! Refresh the page to play again!");
+            submitButtonText.textContent = "CPU Wins!"
+        }
+    }
+
+
     console.log(score1);
     console.log(score2);
     console.log(winner);
 
     gameScore1.textContent = score1;
     gameScore2.textContent = score2;
+    cpuScore.textContent = score2;
     if (character1 != "Raj"){
 
         switch(choice1){
-            case "Rock": gameChoice.textContent = "🤛🏻";
+            case "Rock": gameChoice.textContent = "✊🏻";
             break;
             
             case "Paper": gameChoice.textContent = "✋🏻";
@@ -450,7 +482,7 @@ submitButton.addEventListener("click", function(){
     }
     }else{
         switch(choice1){
-            case "Rock": gameChoice.textContent = "🤛🏾";
+            case "Rock": gameChoice.textContent = "✊🏾";
             break;
             
             case "Paper": gameChoice.textContent = "✋🏾";
@@ -469,55 +501,81 @@ submitButton.addEventListener("click", function(){
 
     if (character2 != "Raj"){
     switch(choice2){
-        case "Rock": gameChoice2.textContent = "🤛🏻";
+        case "Rock": 
+        gameChoice2.textContent = "✊🏻";
+        cpuChoice.textContent = "✊🏻";
         break;
 
-        case "Paper": gameChoice2.textContent = "✋🏻";
+        case "Paper": 
+        gameChoice2.textContent = "✋🏻";
+        cpuChoice.textContent = "✋🏻";
         break;
 
-        case "Scissors": gameChoice2.textContent = "✌🏻";
+        case "Scissors": 
+        gameChoice2.textContent = "✌🏻";
+        cpuChoice.textContent = "✌🏻";
         break;
 
-        case "Lizard": gameChoice2.textContent = "🤏🏻";
+        case "Lizard": 
+        gameChoice2.textContent = "🤏🏻";
+        cpuChoice.textContent = "🤏🏻";
         break;
 
-        case "Spock": gameChoice2.textContent = "🖖🏻";
+        case "Spock": 
+        gameChoice2.textContent = "🖖🏻";
+        cpuChoice.textContent = "🖖🏻";
         break;
     }
 }else{
     switch(choice2){
-        case "Rock": gameChoice2.textContent = "🤛🏾";
+        case "Rock": 
+        gameChoice2.textContent = "✊🏾";
+        cpuChoice.textContent = "✊🏾";
         break;
         
-        case "Paper": gameChoice2.textContent = "✋🏾";
+        case "Paper": 
+        gameChoice2.textContent = "✋🏾";
+        cpuChoice.textContent = "✋🏾";
         break;
         
-        case "Scissors": gameChoice2.textContent = "✌🏾";
+        case "Scissors": 
+        gameChoice2.textContent = "✌🏾";
+        cpuChoice.textContent = "✌🏾";
         break;
         
-    case "Lizard": gameChoice2.textContent = "🤏🏾";
+    case "Lizard": 
+    gameChoice2.textContent = "🤏🏾";
+    cpuChoice.textContent = "🤏🏾";
     break;
 
-    case "Spock": gameChoice2.textContent = "🖖🏾";
+    case "Spock": 
+    gameChoice2.textContent = "🖖🏾";
+    cpuChoice.textContent = "🖖🏾";
     break;
 }
 }
-
-    if ((score1 || score2) >= winScore){
-        if (score1 > score2) winner = "Player 1";
-        if (score1 < score2) winner = secondPlayer;
-
-        alert(winner + " has won the game!")
-    }
 })
 
 function KeepScore(){
     switch (winner){
 
         case "Player1": score1++;
+        // gameScore1.className = "gameScore";
+        submitButtonText.textContent = "Player 1 point"
+        // gameScore1.className = "gameScore zoomer";
         break;
         
         case "Player2": score2++;
+        if (secondPlayer == "CPU"){
+            // cpuScore.className = "cpuScore";
+            submitButtonText.textContent = "CPU's point"
+        //     cpuScore.className = "cpuScore zoomer";
+        }
+        if (secondPlayer == "Human"){
+            // gameScore2.className = "gameScore2";
+            submitButtonText.textContent = "Player 2 point"
+        //     gameScore2.className = "gameScore2 zoomer";
+        }
         break;
 
         case "Tie":
@@ -646,9 +704,4 @@ if (choice1 == "Lizard")
             break;
         }
     }
-
 }
-    
-    function selectPage(){
-        
-    }
