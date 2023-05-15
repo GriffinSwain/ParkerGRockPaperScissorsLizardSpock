@@ -37,6 +37,11 @@
    
 }
 
+.titleScreen{
+   width: 100vw;
+   height: 100vh;
+}
+
 .pageWaiting{
    z-index: -1;
    margin-top: -2000px;

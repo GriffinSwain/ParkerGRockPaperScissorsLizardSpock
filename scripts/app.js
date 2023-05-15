@@ -90,7 +90,7 @@ let textScore2 = "";
 let secondPlayer = "CPU";
 let cpuAPIUrl = "";
 
-var audio = new Audio('Assets/BigBangThemeSong.mp3'); 
+let audio = new Audio('Assets/BigBangThemeSong.mp3'); 
 
 // Temporary code to allow me to work on the second page without it going back to the first page constantly
 
